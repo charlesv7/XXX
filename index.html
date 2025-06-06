@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XXX</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(to bottom right, #000000, #330000);
+      color: #fff0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      background-color: #1a000d;
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(255, 0, 85, 0.4);
+      padding: 30px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      overflow-y: auto;
+      max-height: 95vh;
+    }
+    input[type="password"] {
+      padding: 12px;
+      width: 95%;
+      margin-top: 12px;
+      border: 1px solid #ff3366;
+      border-radius: 10px;
+      font-size: 18px;
+      background-color: #330000;
+      color: #fff;
+      text-align: center;
+    }
+    button {
+      margin-top: 18px;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 10px;
+      background-color: #cc0033;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff3366;
+    }
+    .hidden {
+      display: none;
+    }
+    #finalContent {
+      text-align: left;
+      white-space: pre-line;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    #finalContent.show {
+      opacity: 1;
+    }
+    iframe {
+      width: 100%;
+      height: 360px;
+      border-radius: 14px;
+      margin-top: 20px;
+      border: 3px solid #ff3366;
+    }
+    .signature {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ff6699;
+      margin-top: 20px;
+    }
+    .title-unique {
+      color: #ff3366;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 4px #000;
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+      input[type="password"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="stepContainer">
+      <h2>Fase <span id="stepNumber">1</span> de 7</h2>
+      <p>Digite a senha correta:</p>
+      <input type="password" id="passwordInput">
+      <br>
+      <button onclick="checkPassword()">Verificar</button>
+      <p id="error" style="color: #ff9999;"></p>
+    </div>
+    <div id="finalContent" class="hidden">
+      <h1 class="title-unique">XXX</h1>
+      <p>Foi em uma "brincadeira" onde tudo começou...</p>
+
+      <h3>Entrega do Buquê - 12/06/2024</h3>
+      <iframe src="https://drive.google.com/file/d/1KD-k7jGuiFv8Sp9LeY-1QKNbu0BCm09m/preview"
+              allow="autoplay" allowfullscreen></iframe>
+
+      <p>Estava nervoso... Mas no final, deu tudo certo.</p>
+
+      <h3>Montagem 2025</h3>
+      <iframe src="https://drive.google.com/file/d/1KbovO2Jb34BcvJ6VGPhQop62FsA0EHv8/preview"
+              allow="autoplay" allowfullscreen></iframe>
+
+      <p>A montagem foi entre risadas, sustos e muito amor.</p>
+
+      <div class="signature">
+        Com todo amor e carinho do seu Chatão,<br>
+        ❤️<strong>Charles Vinícius</strong>❤️
+      </div>
+    </div>
+  </div>
+  <script>
+    const passwords = ["26081914", "05021992", "kaka", "pele", "7", "14112024", "eu vou te dar o mundo"];
+    let currentStep = 0;
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const error = document.getElementById("error");
+      if (input === passwords[currentStep]) {
+        currentStep++;
+        if (currentStep < passwords.length) {
+          alert(`Coração desbloqueado! Você avançou para a fase ${currentStep}. Continue com amor...`);
+          document.getElementById("stepNumber").textContent = currentStep + 1;
+          document.getElementById("passwordInput").value = "";
+          error.textContent = "";
+        } else {
+          alert("Você chegou até aqui com amor e dedicação... Agora, prepare-se para a surpresa final!");
+          document.getElementById("stepContainer").classList.add("hidden");
+          const final = document.getElementById("finalContent");
+          final.classList.remove("hidden");
+          final.classList.add("show");
+        }
+      } else {
+        error.textContent = "Senha incorreta. Tente novamente.";
+      }
+    }
+  </script>
+</body>
+</html>
