@@ -1,18 +1,178 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head><meta charset="UTF-8"><title>XXX</title></head>
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo do Amor</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to bottom right, #000000, #330000);
+  color: #fff0f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.container {
+  background-color: #1a000d;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(255, 0, 85, 0.4);
+  padding: 30px;
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 95vh;
+}
+input[type="password"] {
+  padding: 12px;
+  width: 95%;
+  margin-top: 12px;
+  border: 1px solid #ff3366;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #330000;
+  color: #fff;
+  text-align: center;
+}
+button {
+  margin-top: 18px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  background-color: #cc0033;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background-color: #ff3366;
+}
+.hidden {
+  display: none;
+}
+#finalContent {
+  text-align: left;
+  white-space: pre-line;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#finalContent.show {
+  opacity: 1;
+}
+h2.heart {
+  color: #ff3366;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+video {
+  width: 100%;
+  border-radius: 14px;
+  margin-top: 20px;
+  border: 3px solid #ff3366;
+}
+.signature {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff6699;
+  margin-top: 20px;
+}
+.title-unique {
+  color: #ff3366;
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 4px #000;
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+  input[type="password"] {
+    width: 100%;
+  }
+}  </style>
+</head>
 <body>
-<h1>UMA BRINCADEIRA</h1>
-<p>Foi em uma "brincadeira"... (texto completo aqui)</p>
+  <div class="container">
+    <div id="stepContainer">
+      <h2>Fase <span id="stepNumber">1</span> de 7</h2>
+      <p>Digite a senha correta:</p>
+      <input type="password" id="passwordInput">
+      <br>
+      <button onclick="checkPassword()">Verificar</button>
+      <p id="error" style="color: #ff9999;"></p>
+    </div><div id="finalContent" class="hidden">
+  <h1 class="title-unique"> UMA BRINCADEIRA </h1>
+  <p>Foi em uma "brincadeira" onde tudo começou, o tal do "PPP". Onde talvez rolou um match entre nós dois? E logo em seguida, o tal do... "VERDADE OU DESAFIO". E foi assim que tudo começou. A partir de duas brincadeiras que pareciam bobas, estamos aqui até hoje. No início tímido, um pouco travado, com o passar do tempo foi se soltando aos poucos. Ainda não o menino extrovertido que aparentava ser, mas tempos depois começou a ser mais desenrolado. Assim que pegou um pouco mais de confiança, pronto. Tudo isso até chegar em 12 de junho de 2024, mas antes de falar dessa data, preciso voltar dois dias antes...10/06/24 Eu, Marcela e Emily tivemos a brilhante ideia de preparar uma surpresa para você. Nisso surgiu a ideia de um "BUQUÊ DE FLORES". Mas até então o problema era: como iam comprar o buquê? Simplesmente tivemos a ideia de criar um buquê de flores artificiais. Mas logo em seguida, outra preocupação: COMO IA ENTREGAR ELE? E a ideia foi: vamos pedir pra professora Ana e entregar na aula dela. Mas tinha prova marcada no dia. Mesmo assim, tivemos a autorização da Ana. Mas o outro porém era: só se a diretora autorizasse também. E por incrível que pareça, tudo deu certo... até chegar na parte de ir atrás das coisas pra fazer o buquê.
+
+11/06/24 Com todas as autorizações, marcamos de ir comprar tudo depois da aula. Com tudo em mãos, fomos para a casa da Emily de tarde para iniciar a montagem. Mas o que nós não esperávamos era que fosse tão difícil de fazer. Seguimos, eu e a Emily mais atrapalhando do que ajudando, mas a guerreira da Marcela continuou empenhada e fazendo. O tempo estava passando e já estava anoitecendo. Tivemos que parar (parar de atrapalhar a Marcela). Eu e Marcela fomos cada um pra sua casa. Marcela e o tio dela continuavam a fazer, e eu em casa, preocupado e ansioso. Marcela foi até às 3h da manhã.
+
+12/06/24 Marcela acordou cedo e terminou o buquê. Eu ainda estava dormindo. Marcela foi pra escola, e eu seguia dormindo. Marcela e o restante do povo ansiosos pra ver a entrega. Eu já tinha perdido o horário. Mas aí, 8h da manhã, Vinícius me liga perguntando onde eu estava. Eu desliguei, me arrumei rápido e fui, literalmente, correndo pra escola. Chegando lá, a diretora já estava subindo pra fazer a entrega, mas por sorte consegui entrar e subir com ela. E então...
 
 <h3>📹 Entrega do Buquê - 12/06/2024</h3>
-<iframe src="https://drive.google.com/file/d/1KD-k7jGuiFv8Sp9LeY-1QKNbu0BCm09m/preview" width="100%" height="360" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1KD-k7jGuiFv8Sp9LeY-1QKNbu0BCm09m/preview" 
+        width="100%" height="360" allow="autoplay" allowfullscreen 
+        style="border: 3px solid #ff3366; border-radius: 14px; margin-top: 20px;">
+</iframe><p>
+Estava nervoso. Todo mundo nos corredores olhando: alunos, professores, as tias...  
+Mas só eu, de olhos fechados e um frio na barriga. Mas no final, deu tudo certo.
+</p><h3>📹 Montagem 2025</h3>
+<iframe src="https://drive.google.com/file/d/1KbovO2Jb34BcvJ6VGPhQop62FsA0EHv8/preview" 
+        width="100%" height="360" allow="autoplay" allowfullscreen 
+        style="border: 3px solid #ff3366; border-radius: 14px; margin-top: 20px;">
+</iframe><p>
+A montagem foi entre risadas, peidos do Vinícius, gritos de susto da Marcela,  
+e gritos de dor das queimaduras de cola quente entre nossos dedos.
+</p>Está aqui uma forma de expressar o meu amor por você. Dizer que você é especial pra mim. Não sou tão bom com palavras, mas tô me esforçando aqui, como sempre me esforço pra estar do seu lado. E sou muito feliz em viver esses momentos tão bonitos com você. Há muito tempo que eu te conheci, e desde então minha vida não foi mais a mesma. Foi tão leve, tão natural, que nem percebi que isso estava se tornando tudo pra mim.
 
-<h3>📹 Montagem 2025</h3>
-<iframe src="https://drive.google.com/file/d/1KbovO2Jb34BcvJ6VGPhQop62FsA0EHv8/preview" width="100%" height="360" allowfullscreen></iframe>
+Nos tornamos namorados no dia 14 de novembro de 2024, e agora, 7 meses depois, posso dizer com todas as letras: te amar tem sido uma das melhores experiências que já vivi.
 
-<p>(continuação do texto completo, com final romântico)</p>
+Cada dia com você é um presente, seja nas conversas ou nas risadas mais bobas. Você me faz sentir tranquilo (só quando tô do seu lado — às vezes ainda fico um pouco nervoso).
 
-<div><strong>Charles Vinícius</strong></div>
-</body>
-</html>
+Nossa história ainda está no começo, mas já tem tanto significado. Você me ensina sobre PACIÊNCIA (porque você não tem nenhuma!), CARINHO (às vezes, porque vive brava rs). Falando em brava, tento sempre entender suas paranoias mas... NÃO CONSIGO!
+
+Mas pelo lado bom, amo seus surtos, seus ataques de rebelde, e acho muito engraçado quando vira as costas pra mim, faz drama e logo já está grudadinha comigo. Sem falar dos ataques de vampira e mulher-gato — literalmente honrando aquela sua fantasia do Quirino. Que GATA, viu!
+
+Pelo lado negativo... você consegue irritar até o engraçadinho com seus "aff" e "juro". Mas voltando pras qualidades: você é parceira (bom, agora você me mata) e, acima de tudo, me ensina sobre o amor.
+
+É com você que quero dividir meus sonhos, os dias bons e até os difíceis. Hoje quero que saiba que meus sentimentos por você crescem mais a cada dia. Eu sempre vou te admirar e te respeitar. E eu sou muito feliz por ter você ao meu lado.
+
+Que venham muitos mais Dias dos Namorados, aniversários de namoro e todos os outros momentos que a vida permitir. Eu ainda vou te dar o mundo. E se você duvida disso... AGUARDE!
+
+<div class="signature">
+Com todo amor e carinho do seu Chatão,<br>
+❤️<strong>Charles Vinícius</strong>❤️
+</div>
+      </p>
+    </div>
+  </div>  <script>
+    const passwords = ["26081914", "05021992", "kaka", "pele", "7", "14112024", "eu vou te dar o mundo"];
+    let currentStep = 0;function checkPassword() {
+  const input = document.getElementById("passwordInput").value;
+  const error = document.getElementById("error");
+  if (input === passwords[currentStep]) {
+    currentStep++;
+    if (currentStep < passwords.length) {
+      alert
+      (`💖 Coração desbloqueado! Você avançou para a fase ${currentStep}. Continue com amor...`);
+      document.getElementById("stepNumber").textContent = currentStep + 1;
+      document.getElementById("passwordInput").value = "";
+      error.textContent = "";
+    } else {
+      alert("🎊 Você chegou até aqui com amor e dedicação... Agora, prepare-se para o coração da surpresa! 💌");
+      document.getElementById("stepContainer").classList.add("hidden");
+      const final = document.getElementById("finalContent");
+      final.classList.remove("hidden");
+      final.classList.add("show");
+    }
+  } else {
+    error.textContent = "Senha incorreta. Tente novamente.";
+  }
+}
+
+</script></body>
+
+  
